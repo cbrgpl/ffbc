@@ -4,21 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "fc6215e2e7a70e88",
+        "id": "1853e937a463d2b2",
         "type": "tabs",
         "children": [
           {
-            "id": "6ce52dd9ecd4bf2e",
+            "id": "20cf4399112ba827",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "бизнес-процессы/Введение в бизнес процессы.md",
-                "mode": "source",
-                "source": false
+                "file": "бизнес анализ/Верхнеуровневая схема сущностей.canvas",
+                "viewState": {
+                  "x": 202.28142943703435,
+                  "y": 66.79532647351158,
+                  "zoom": -0.5474107837968363
+                }
               },
-              "icon": "lucide-file",
-              "title": "Введение в бизнес процессы"
+              "icon": "lucide-layout-dashboard",
+              "title": "Верхнеуровневая схема сущностей"
             }
           }
         ]
@@ -180,16 +183,38 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "homepage:Open homepage": false
     }
   },
-  "active": "6ce52dd9ecd4bf2e",
+  "active": "20cf4399112ba827",
   "lastOpenFiles": [
-    "бизнес-процессы/Товары.md",
+    "бизнес анализ/Заказ.md",
+    "бизнес анализ/Продукт.md",
+    "бизнес анализ/Мерки.md",
+    "Глоссарий.md",
     "FFBC FShop.md",
-    "бизнес-процессы/Введение в бизнес процессы.md",
+    "бизнес анализ/Введение в бизнес процессы.md",
+    "бизнес анализ/Верхнеуровневая схема сущностей.canvas",
+    "бизнес анализ/О проекте.md",
+    "Г.md",
+    "Untitled 1.base",
+    "Untitled.base",
+    "2025-12-09.md",
+    "Excalidraw/Drawing 2025-12-09 19.49.37.excalidraw.md",
+    "Drawing 2025-12-09 19.48.09.excalidraw.md",
+    "Excalidraw/Scripts/Downloaded/Auto Layout.svg",
+    "Excalidraw/Scripts/Downloaded/Auto Layout.md",
+    "Drawing 2025-12-09 19.44.11.excalidraw.md",
+    "Excalidraw/Scripts/Downloaded/Add Connector Point.svg",
+    "Excalidraw/Scripts/Downloaded/Add Connector Point.md",
+    "Excalidraw/Scripts/Downloaded",
+    "Excalidraw/Scripts",
+    "Excalidraw",
+    "бизнес-процессы/Верхнеуровневая схема.md",
     "().md",
     "Welcome.md",
-    "бизнес-процессы"
+    "бизнес анализ"
   ]
 }
