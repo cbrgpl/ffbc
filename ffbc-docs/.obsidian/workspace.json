@@ -1,0 +1,195 @@
+{
+  "main": {
+    "id": "177b33f42c736494",
+    "type": "split",
+    "children": [
+      {
+        "id": "fc6215e2e7a70e88",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6ce52dd9ecd4bf2e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "бизнес-процессы/Введение в бизнес процессы.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Введение в бизнес процессы"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "846f8289ec5ff3dd",
+    "type": "split",
+    "children": [
+      {
+        "id": "f1d0fdec67127e2e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3d54bcfe7ce83f0f",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "17b02d497b19030d",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "08d17b26f009555f",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "b6ee90433221c32a",
+    "type": "split",
+    "children": [
+      {
+        "id": "5ee08927d014f8cc",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c519d9cbc028fd96",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "бизнес-процессы/Введение в бизнес процессы.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Введение в бизнес процессы"
+            }
+          },
+          {
+            "id": "ad1fed69e4f1c519",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "бизнес-процессы/Введение в бизнес процессы.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Введение в бизнес процессы"
+            }
+          },
+          {
+            "id": "ad2482c91ce6d78a",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "19afe5a2e8ac89b3",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "9c4aaefc40a8f22c",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "бизнес-процессы/Введение в бизнес процессы.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Введение в бизнес процессы"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "6ce52dd9ecd4bf2e",
+  "lastOpenFiles": [
+    "бизнес-процессы/Товары.md",
+    "FFBC FShop.md",
+    "бизнес-процессы/Введение в бизнес процессы.md",
+    "().md",
+    "Welcome.md",
+    "бизнес-процессы"
+  ]
+}
