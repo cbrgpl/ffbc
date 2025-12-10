@@ -1,16 +1,18 @@
 {
 	"nodes":[
 		{"id":"b4356bb0b7852883","type":"text","text":"Заказ","x":-434,"y":-450,"width":250,"height":60,"color":"5"},
-		{"id":"d015110e869505c4","type":"text","text":"Продукт","x":185,"y":-20,"width":250,"height":50,"color":"2"},
-		{"id":"84b7a66e41632211","type":"text","text":"Экземпляр продукта","x":-395,"y":-100,"width":250,"height":60,"color":"5"},
-		{"id":"8336268b42f3bc60","type":"text","text":"Другая инфа(текст, фото, видео)","x":-880,"y":-340,"width":250,"height":60,"color":"5"},
-		{"id":"a735f5933491ef57","type":"text","text":"Мерка продукта","x":-720,"y":30,"width":250,"height":60,"color":"5"},
-		{"id":"8593bab97efd8d15","type":"text","text":"Особенность продукта","x":-434,"y":180,"width":250,"height":60,"color":"5"},
+		{"id":"d015110e869505c4","type":"text","text":"Продукт ручного создания","x":185,"y":-20,"width":250,"height":50,"color":"2"},
+		{"id":"84b7a66e41632211","type":"text","text":"Экземпляр продукта ручного создания","x":-395,"y":-100,"width":250,"height":60,"color":"2"},
+		{"id":"a735f5933491ef57","type":"text","text":"Мерки экземпляра продукта","x":-720,"y":30,"width":250,"height":60,"color":"2"},
+		{"id":"8593bab97efd8d15","type":"text","text":"Особенность экземпляра продукта","x":-434,"y":180,"width":250,"height":60,"color":"2"},
 		{"id":"7f37248dc5b1d24c","type":"text","text":"Группа мерок","x":0,"y":480,"width":250,"height":50,"color":"2"},
 		{"id":"bec3cf5f42a68d1f","type":"text","text":"Мерка","x":0,"y":640,"width":250,"height":50,"color":"2"},
-		{"id":"bb4c01a803453b0a","type":"text","text":"Значение особенности","x":460,"y":455,"width":250,"height":50,"color":"2"},
-		{"id":"f5fa6ef8434412a3","type":"text","text":"Особенность","x":460,"y":340,"width":250,"height":50,"color":"2"},
-		{"id":"cb197ddb0abd95b4","type":"text","text":"Клиент","x":-145,"y":-620,"width":250,"height":60,"color":"5"}
+		{"id":"f5fa6ef8434412a3","type":"text","text":"Модификатор","x":460,"y":340,"width":250,"height":50,"color":"2"},
+		{"id":"cb197ddb0abd95b4","type":"text","text":"Клиент","x":-145,"y":-620,"width":250,"height":60,"color":"#131a7c"},
+		{"id":"8336268b42f3bc60","type":"text","text":"Другая инфа(текст, фото, видео)","x":-845,"y":-340,"width":250,"height":60,"color":"5"},
+		{"id":"bb4c01a803453b0a","type":"text","text":"Значение модификатора","x":460,"y":505,"width":250,"height":50,"color":"2"},
+		{"id":"8e18ea52fca9b7fc","type":"text","text":"Продукт на перепродажу","x":880,"y":-420,"width":250,"height":50,"color":"4"},
+		{"id":"0343598c727f4e02","type":"text","text":"Лот продукта","x":630,"y":-200,"width":250,"height":50,"color":"6"}
 	],
 	"edges":[
 		{"id":"8a753807c828ca92","fromNode":"d015110e869505c4","fromSide":"left","toNode":"7f37248dc5b1d24c","toSide":"top","label":"Ссылается\nM"},
@@ -25,6 +27,9 @@
 		{"id":"f0302e0add2c97e0","fromNode":"8593bab97efd8d15","fromSide":"bottom","toNode":"bb4c01a803453b0a","toSide":"left","color":"1","label":"Копия"},
 		{"id":"fbf2159544f2a8b0","fromNode":"a735f5933491ef57","fromSide":"bottom","toNode":"bec3cf5f42a68d1f","toSide":"left","color":"1","label":"Ссылается"},
 		{"id":"cf97a0231f9454fe","fromNode":"7f37248dc5b1d24c","fromSide":"bottom","toNode":"bec3cf5f42a68d1f","toSide":"top","label":"Содержит\nМ"},
-		{"id":"38d57f03f537bc03","fromNode":"d015110e869505c4","fromSide":"bottom","toNode":"bec3cf5f42a68d1f","toSide":"right","label":"Ссылается\nм"}
+		{"id":"38d57f03f537bc03","fromNode":"d015110e869505c4","fromSide":"bottom","toNode":"bec3cf5f42a68d1f","toSide":"right","label":"Ссылается\nм"},
+		{"id":"7ef605d62def37e5","fromNode":"b4356bb0b7852883","fromSide":"bottom","toNode":"0343598c727f4e02","toSide":"top","label":"Содержит"},
+		{"id":"d2e3f6c2a284cb2a","fromNode":"b4356bb0b7852883","fromSide":"bottom","toNode":"8e18ea52fca9b7fc","toSide":"top","label":"Содержит"},
+		{"id":"59bb75ad70c77d3d","fromNode":"0343598c727f4e02","fromSide":"bottom","toNode":"d015110e869505c4","toSide":"top","color":"1","label":"Ссылается"}
 	]
 }
