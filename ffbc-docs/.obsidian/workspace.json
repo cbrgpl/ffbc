@@ -4,75 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "88ce2f59c111a0e9",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "a415cd0fa700cec4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "бизнес анализ/Заказ.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Заказ"
-            }
-          },
-          {
-            "id": "54c41686c01780d9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "бизнес анализ/Продукт.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Продукт"
-            }
-          },
-          {
-            "id": "757b46cfb210da6f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "бизнес анализ/Мерки.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Мерки"
-            }
-          }
-        ],
-        "currentTab": 2
-      },
-      {
         "id": "4509724f8bf84da7",
         "type": "tabs",
         "children": [
           {
             "id": "e7a7b303c61786dc",
             "type": "leaf",
-            "pinned": true,
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "бизнес анализ/Верхнеуровневая схема сущностей.canvas",
-                "viewState": {
-                  "x": 21.641391689127147,
-                  "y": -3.8068172323004603,
-                  "zoom": -1.0720584191001228
-                }
+                "file": "FFBC FShop.md",
+                "mode": "source",
+                "source": false
               },
-              "pinned": true,
-              "icon": "lucide-layout-dashboard",
-              "title": "Верхнеуровневая схема сущностей"
+              "icon": "lucide-file",
+              "title": "FFBC FShop"
             }
           }
         ]
@@ -238,16 +184,16 @@
       "homepage:Open homepage": false
     }
   },
-  "active": "757b46cfb210da6f",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "бизнес анализ/Продукт.md",
-    "бизнес анализ/Заказ.md",
-    "бизнес анализ/Мерки.md",
     "Глоссарий.md",
-    "бизнес анализ/Аукцион.md",
+    "FFBC FShop.md",
+    "бизнес анализ/Мерки.md",
     "бизнес анализ/Верхнеуровневая схема сущностей.canvas",
     "бизнес анализ/Введение в бизнес процессы.md",
-    "FFBC FShop.md",
+    "бизнес анализ/Аукцион.md",
+    "бизнес анализ/Заказ.md",
+    "бизнес анализ/Продукт.md",
     "раздела о стоимости продукта.md",
     "2025-12-10.md",
     "бизнес анализ/О проекте.md",
