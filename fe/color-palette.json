@@ -1,0 +1,66 @@
+{
+  "light": {
+    "primary": {
+      "background": "#D91E36",
+      "text": "#FFFFFF",
+      "border": "#B5192D"
+    },
+    "secondary": {
+      "background": "#EDEDED",
+      "text": "#111111",
+      "border": "#D9D9D9"
+    },
+    "surface": {
+      "layout1": "#FFFFFF",
+      "layout-secondary": "#FAFAF7",
+      "card-level1": "#FFFFFF",
+      "card-level2": "#F5F5F2"
+    },
+    "positive": {
+      "background": "#147D6F",
+      "text": "#FFFFFF",
+      "border": "#10685D"
+    },
+    "negative": {
+      "background": "#A61D2E",
+      "text": "#FFFFFF",
+      "border": "#7F1220"
+    },
+    "overlay": {
+      "modal": "rgba(0,0,0,0.6)",
+      "sheet": "rgba(0,0,0,0.4)"
+    }
+  },
+  "dark": {
+    "primary": {
+      "background": "#D91E36",
+      "text": "#FFFFFF",
+      "border": "#B5192D"
+    },
+    "secondary": {
+      "background": "#2A2A2A",
+      "text": "#FFFFFF",
+      "border": "#3A3A3A"
+    },
+    "surface": {
+      "layout1": "#0E0E0F",
+      "layout-secondary": "#141415",
+      "card-level1": "#161617",
+      "card-level2": "#1C1C1D"
+    },
+    "positive": {
+      "background": "#3AAE9A",
+      "text": "#0E0E0F",
+      "border": "#329786"
+    },
+    "negative": {
+      "background": "#E05A52",
+      "text": "#0E0E0F",
+      "border": "#C24D46"
+    },
+    "overlay": {
+      "modal": "rgba(0,0,0,0.65)",
+      "sheet": "rgba(0,0,0,0.5)"
+    }
+  }
+}
