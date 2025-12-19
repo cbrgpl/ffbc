@@ -1,0 +1,57 @@
+@import url('./fonts.css');
+@import url('./themes/index.css');
+@import url('./reset.css');
+
+:root {
+  --font-family: "Ubuntu", sans-serif;
+  --font-size: 16px;
+
+  --xs: 1rem;
+  --sm: 1.25rem;
+  --md: 2rem;
+  --lg: 2.5rem;
+
+  --layer-opacity-hover: 0.12;
+  --layer-opacity-focus: 0.25;
+  --layer-opacity-active: 0.25;
+
+  --color-disabled-container: color-mix(
+    in srgb,
+    var(--md-sys-color-on-surface) 12%,
+    transparent
+  );
+
+  --color-disabled-content: color-mix(
+    in srgb,
+    var(--md-sys-color-on-surface) 38%,
+    transparent
+  );
+
+  --color-disable-outline: color-mix(
+    in srgb,
+    var(--md-sys-color-on-surface) 20%,
+    transparent
+  )
+}
+
+
+.xs {
+  font-size: 0.5rem;
+  height: var(--xs);
+}
+
+
+.sm {
+  font-size: 1rem;
+  height: var(--sm)
+}
+
+.md {
+  font-size: 1rem;
+  height: var(--md)
+}
+
+.lg {
+  font-size: 1.25rem;
+  height: var(--lg)
+}

@@ -1,0 +1,1 @@
+export { default as QText } from './ui/q-text.vue' 
