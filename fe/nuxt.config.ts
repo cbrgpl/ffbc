@@ -4,25 +4,40 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
 
+  app: {
+    rootAttrs: {
+      id: "nuxt-root",
+    },
+  },
+
   dir: {
     pages: "routes",
   },
 
   devServer: {
-    port: 3002,
+    port: 3001,
   },
 
   modules: [
+    // TODO Research if it is needed for project
     "@nuxt/eslint",
-    "@nuxt/fonts",
     "@nuxt/icon",
+    // TODO Research if it is needed for project
     "@nuxt/image",
+    // TODO Research if it is needed for project
     "@nuxt/scripts",
+    // TODO Research if it is needed for project
     "@nuxt/test-utils",
     "reka-ui/nuxt",
     "@nuxtjs/i18n",
     "@pinia/nuxt",
   ],
+
+  icon: {
+    serverBundle: {
+      collections: ["mdi"],
+    },
+  },
 
   experimental: {
     typedPages: true,
@@ -39,5 +54,7 @@ export default defineNuxtConfig({
   alias: {
     "~admina": path.resolve(__dirname, "app", "admina"),
     "~shop": path.resolve(__dirname, "app", "shop"),
+    "~utils": path.resolve(__dirname, "app", "utils"),
+    "~ui": path.resolve(__dirname, "app", "ui"),
   },
 });
