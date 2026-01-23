@@ -2,12 +2,20 @@
   "name": "ffbc-fe",
   "type": "module",
   "private": true,
+  "lint-staged": {
+    "*.md": "prettier --write",
+    "*.{js,vue,ts,cjs}": "eslint --ignore-pattern .gitignore",
+    "*.{css,html,vue}": "stylelint --ignore-path .gitignore"
+  },
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "check:types": "vue-tsc --noEmit --project .nuxt/tsconfig.app.json",
+    "check:linters": "npx eslint . --fix && npx stylelint '**/*{.css,.vue}' --fix",
+    "prepare": "cd .. && husky fe/.husky"
   },
   "dependencies": {
     "@nuxt/eslint": "^1.12.1",
@@ -31,10 +39,13 @@
     "@types/node": "^25.0.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.5",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
     "stylelint-config-clean-order": "^8.0.0",
     "stylelint-config-html": "^1.1.0",
     "stylelint-config-recommended-vue": "^1.6.1",
     "stylelint-config-standard": "^40.0.0",
-    "stylelint-prettier": "^5.0.3"
+    "stylelint-prettier": "^5.0.3",
+    "vue-tsc": "^3.2.3"
   }
 }
