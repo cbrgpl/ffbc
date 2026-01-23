@@ -1,0 +1,40 @@
+{
+  "css.lint.unknownAtRules": "ignore",
+  "scss.lint.unknownAtRules": "ignore",
+  "eslint.validate": [
+    "javascript",
+    "typescript",
+    "json",
+    "vue"
+  ],
+  "stylelint.validate": [
+    "css",
+    "scss",
+    "vue",
+    "html",
+    "vue"
+  ],
+  "[markdown]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.formatOnSave": true
+  },
+  "[html]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint",
+    "editor.formatOnSave": true
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "tsconfig.json": "tsconfig.*.json, env.d.ts",
+    "vite.config.*": "jsconfig*, vitest.config.*, cypress.config.*, playwright.config.*",
+    "package.json": "package-lock.json, pnpm*, .yarnrc*, yarn*, .eslint*, eslint*, .prettier*, prettier*, .editorconfig, .npmrc*, stylelint*, commitlint*, .browserslistrc",
+    ".gitlab-ci.yml": "Dockerfile",
+    ".env.example": ".env*",
+    ".gitignore": ".gitmodules"
+  },
+  "eslint.workingDirectories": [
+    { "directory": "./", "changeProcessCWD": true }
+  ]
+}
