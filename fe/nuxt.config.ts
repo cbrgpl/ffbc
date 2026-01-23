@@ -1,11 +1,11 @@
-import path from 'node:path'
+import path from "node:path";
 
 export default defineNuxtConfig({
-  compatibilityDate: '2025-07-15',
+  compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
 
   dir: {
-    pages: 'routes'
+    pages: "routes",
   },
 
   devServer: {
@@ -13,31 +13,31 @@ export default defineNuxtConfig({
   },
 
   modules: [
-    '@nuxt/eslint',
-    '@nuxt/fonts',
-    '@nuxt/icon',
-    '@nuxt/image',
-    '@nuxt/scripts',
-    '@nuxt/test-utils',
-    'reka-ui/nuxt',
-    '@nuxtjs/i18n',
-    '@pinia/nuxt'
+    "@nuxt/eslint",
+    "@nuxt/fonts",
+    "@nuxt/icon",
+    "@nuxt/image",
+    "@nuxt/scripts",
+    "@nuxt/test-utils",
+    "reka-ui/nuxt",
+    "@nuxtjs/i18n",
+    "@pinia/nuxt",
   ],
 
   experimental: {
-    typedPages: true
+    typedPages: true,
   },
 
   i18n: {
     locales: [
-      { code: 'en', language: 'en-US' },
-      { code: 'ru', language: 'ru-RU' }
+      { code: "en", language: "en-US" },
+      { code: "ru", language: "ru-RU" },
     ],
-    defaultLocale: 'en',
+    defaultLocale: "en",
   },
 
   alias: {
-    '~admina': path.resolve(__dirname, 'app', 'admina'),
-    '~shop': path.resolve(__dirname, 'app', 'shop')
-  }
-})
+    "~admina": path.resolve(__dirname, "app", "admina"),
+    "~shop": path.resolve(__dirname, "app", "shop"),
+  },
+});
