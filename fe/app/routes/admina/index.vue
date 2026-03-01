@@ -1,18 +1,13 @@
 <script lang="ts" setup>
-
 definePageMeta({
-  redirect: '/admina/auth'
-})
+  redirect: "/admina/auth",
+});
 
 defineOptions({
-  name: 'AdminaR'
-})
-
+  name: "admina-r",
+});
 </script>
 
-
 <template>
-  <div>
-    asdasd
-  </div>
+  <div>asdasd</div>
 </template>

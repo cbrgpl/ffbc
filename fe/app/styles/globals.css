@@ -1,0 +1,232 @@
+@import url("./fonts.css");
+@import url("./themes/index.css");
+@import url("./reset.css");
+
+.light {
+  --elevation-1: 0 1px 2px 0 rgb(0 0 0 / 0.3), 0 1px 3px 1px rgb(0 0 0 / 0.15);
+  --elevation-2: 0 1px 2px 0 rgb(0 0 0 / 0.3), 0 2px 6px 2px rgb(0 0 0 / 0.15);
+  --elevation-3: 0 4px 8px 3px rgb(0 0 0 / 0.15), 0 1px 3px 0 rgb(0 0 0 / 0.3);
+  --elevation-4: 0 6px 10px 4px rgb(0 0 0 / 0.15), 0 2px 3px 0 rgb(0 0 0 / 0.3);
+  --elevation-5: 0 8px 12px 6px rgb(0 0 0 / 0.15), 0 4px 4px 0 rgb(0 0 0 / 0.3);
+}
+
+.dark {
+  --elevation-1: 0 1px 3px 1px rgb(0 0 0 / 0.15), 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --elevation-2: 0 2px 6px 2px rgb(0 0 0 / 0.15), 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --elevation-3: 0 4px 8px 3px rgb(0 0 0 / 0.15), 0 1px 3px 0 rgb(0 0 0 / 0.3);
+  --elevation-4: 0 6px 10px 4px rgb(0 0 0 / 0.15), 0 2px 3px 0 rgb(0 0 0 / 0.3);
+  --elevation-5: 0 8px 12px 6px rgb(0 0 0 / 0.15), 0 4px 4px 0 rgb(0 0 0 / 0.3);
+}
+
+:root {
+  --font-family: "Ubuntu", sans-serif;
+  --font-size: 16px;
+  --xs: 1rem;
+  --sm: 1.25rem;
+  --md: 2rem;
+  --lg: 2.5rem;
+  --xl: 3.5rem;
+  --radius-xs: 0.25rem; /** 4px */
+  --radius-sm: 0.5rem; /** 8px */
+  --radius-md: 0.75rem; /** 12px */
+  --radius-lg: 1rem; /** 16px */
+  --radius-lge: 1.25rem; /** 20px */
+  --radius-xl: 1.75rem; /** 28px */
+  --radius-xle: 2rem; /** 32px */
+  --radius-xxl: 3rem; /** 48px */
+  --radius-full: 1000px;
+}
+
+.display-large {
+  font: 400 57px/64px var(--font-family);
+  letter-spacing: -0.25px;
+}
+
+.display-medium {
+  font: 400 45px/52px var(--font-family);
+  letter-spacing: 0;
+}
+
+.display-small {
+  font: 400 36px/44px var(--font-family);
+  letter-spacing: 0;
+}
+
+.headline-large {
+  font: 400 32px/40px var(--font-family);
+  letter-spacing: 0;
+}
+
+.headline-medium {
+  font: 400 28px/36px var(--font-family);
+  letter-spacing: 0;
+}
+
+.headline-small {
+  font: 400 24px/32px var(--font-family);
+  letter-spacing: 0;
+}
+
+.title-large {
+  font: 400 22px/28px var(--font-family);
+  letter-spacing: 0;
+}
+
+.title-medium {
+  font: 500 16px/24px var(--font-family);
+  letter-spacing: 0.15px;
+}
+
+.title-small {
+  font: 500 14px/20px var(--font-family);
+  letter-spacing: 0.1px;
+}
+
+.label-large {
+  font: 500 14px/20px var(--font-family);
+  letter-spacing: 0.1px;
+}
+
+.label-medium {
+  font: 500 12px/16px var(--font-family);
+  letter-spacing: 0.5px;
+}
+
+.label-small {
+  font: 500 11px/16px var(--font-family);
+  letter-spacing: 0.5px;
+}
+
+.body-large {
+  font: 400 16px/24px var(--font-family);
+  letter-spacing: 0.5px;
+}
+
+.body-medium {
+  font: 400 14px/20px var(--font-family);
+  letter-spacing: 0.25px;
+}
+
+.body-small {
+  font: 400 12px/16px var(--font-family);
+  letter-spacing: 0.4px;
+}
+
+.display-large-emp {
+  font: 500 57px/64px var(--font-family);
+  letter-spacing: -0.25px;
+}
+
+.display-medium-emp {
+  font: 500 45px/52px var(--font-family);
+  letter-spacing: 0;
+}
+
+.display-small-emp {
+  font: 500 36px/44px var(--font-family);
+  letter-spacing: 0;
+}
+
+.headline-large-emp {
+  font: 500 32px/40px var(--font-family);
+  letter-spacing: 0;
+}
+
+.headline-medium-emp {
+  font: 500 28px/36px var(--font-family);
+  letter-spacing: 0;
+}
+
+.headline-small-emp {
+  font: 500 24px/32px var(--font-family);
+  letter-spacing: 0;
+}
+
+.title-large-emp {
+  font: 500 22px/28px var(--font-family);
+  letter-spacing: 0;
+}
+
+.title-medium-emp {
+  font: 700 16px/24px var(--font-family);
+  letter-spacing: 0.15px;
+}
+
+.title-small-emp {
+  font: 700 14px/20px var(--font-family);
+  letter-spacing: 0.1px;
+}
+
+.label-large-emp {
+  font: 700 14px/20px var(--font-family);
+  letter-spacing: 0.1px;
+}
+
+.label-medium-emp {
+  font: 700 12px/16px var(--font-family);
+  letter-spacing: 0.5px;
+}
+
+.label-small-emp {
+  font: 700 11px/16px var(--font-family);
+  letter-spacing: 0.5px;
+}
+
+.body-large-emp {
+  font: 500 16px/24px var(--font-family);
+  letter-spacing: 0.5px;
+}
+
+.body-medium-emp {
+  font: 500 14px/20px var(--font-family);
+  letter-spacing: 0.25px;
+}
+
+.body-small-emp {
+  font: 500 12px/16px var(--font-family);
+  letter-spacing: 0.4px;
+}
+
+#nuxt-root {
+  height: 100dvh;
+}
+
+.xs {
+  height: var(--xs);
+  font-size: 0.5rem;
+}
+
+.sm {
+  height: var(--sm);
+  font-size: 1rem;
+}
+
+.md {
+  height: var(--md);
+  font-size: 1rem;
+}
+
+.lg {
+  height: var(--lg);
+  font-size: 1.25rem;
+}
+
+.elevation-1 {
+  box-shadow: var(--elevation-1);
+}
+
+.elevation-2 {
+  box-shadow: var(--elevation-2);
+}
+
+.elevation-3 {
+  box-shadow: var(--elevation-3);
+}
+
+.elevation-4 {
+  box-shadow: var(--elevation-4);
+}
+
+.elevation-5 {
+  box-shadow: var(--elevation-5);
+}

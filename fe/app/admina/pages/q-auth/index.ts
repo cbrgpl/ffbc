@@ -1,1 +1,1 @@
-export { default } from './ui/q-auth.vue'
+export { default } from "./ui/q-auth.vue";

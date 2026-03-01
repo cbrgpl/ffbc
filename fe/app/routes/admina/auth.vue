@@ -1,12 +1,10 @@
 <script lang="ts" setup>
-import QAuth from '~admina/pages/q-auth';
+import QAuth from "~admina/pages/q-auth";
 
 defineOptions({
-  name: 'AdminaAuthR'
-})
-
+  name: "admina-auth-r",
+});
 </script>
-
 
 <template>
   <QAuth />

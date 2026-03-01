@@ -36,5 +36,6 @@
   },
   "eslint.workingDirectories": [
     { "directory": "./", "changeProcessCWD": true }
-  ]
+  ],
+  "vue.editor.focusMode": true,
 }
