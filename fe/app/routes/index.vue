@@ -1,18 +1,13 @@
 <script lang="ts" setup>
-
 definePageMeta({
-  redirect: '/auth'
-})
+  redirect: "/auth",
+});
 
 defineOptions({
-  name: 'RootR'
-})
-
+  name: "root-r",
+});
 </script>
 
-
 <template>
-  <div>
-    asdasd
-  </div>
+  <div>root page</div>
 </template>

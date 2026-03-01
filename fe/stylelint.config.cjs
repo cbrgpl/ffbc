@@ -11,7 +11,7 @@ module.exports = {
     "selector-pseudo-class-no-unknown": [
       true,
       {
-        ignorePseudoClasses: ["global", "slotted"],
+        ignorePseudoClasses: ["global", "slotted", "deep"],
         severity: "warning",
         message: "Запрещенный псевдокласс",
       },
