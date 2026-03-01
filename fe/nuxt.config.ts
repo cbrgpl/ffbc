@@ -50,7 +50,6 @@ export default defineNuxtConfig({
   alias: {
     "~admina": path.resolve(__dirname, "app", "admina"),
     "~shop": path.resolve(__dirname, "app", "shop"),
-    "~utils": path.resolve(__dirname, "app", "utils"),
-    "~ui": path.resolve(__dirname, "app", "ui"),
+    "~uikit": path.resolve(__dirname, "uikit"),
   },
 });

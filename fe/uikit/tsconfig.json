@@ -1,0 +1,30 @@
+{
+  "include": [
+    "**/*.vue",
+    "**/*.ts"
+  ],
+  "compilerOptions": {
+    "allowJs": false,
+    "skipLibCheck": true,
+    "target": "esnext",
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "allowArbitraryExtensions": true,
+    "moduleResolution": "bundler",
+    "module": "esnext",
+    "strict": true,
+    "noEmit": true,
+    "noUncheckedIndexedAccess": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": [
+      "esnext",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "paths": {
+      "~uikit/*": [
+        "./*"
+      ]
+    },
+  }
+}

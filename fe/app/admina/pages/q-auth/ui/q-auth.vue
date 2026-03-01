@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { QButton, QIbutton } from "@/ui/q-button";
-import { QFab } from "@/ui/q-fab";
+import { QButton, QIbutton } from "~uikit/ui/q-button";
+import { QFab } from "~uikit/ui/q-fab";
 
-import { QButtonGroup, QConnectedButtonGroup, type ConnectedButtonGroupSeg } from "~/ui/q-button-group";
+import { QButtonGroup, QConnectedButtonGroup, type ConnectedButtonGroupSeg } from "~uikit/ui/q-button-group";
 
 defineOptions({
   name: "q-auth",
