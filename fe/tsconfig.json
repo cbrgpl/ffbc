@@ -13,6 +13,9 @@
     },
     {
       "path": "./.nuxt/tsconfig.node.json"
+    },
+    {
+      "path": "./uikit/tsconfig.json"
     }
   ]
 }

@@ -2,9 +2,8 @@
 import { TooltipProvider } from "reka-ui";
 
 import "./styles/globals.css";
-import type { Themes } from "./utils/ui-toolkit";
-import { cssVars, useUiContext } from "./utils/ui-toolkit";
-import { QLayout, vFillLayout } from "./ui/q-layout";
+import { cssVars, useUiContext, type Themes } from "~uikit/libs/standard";
+import { QLayout, vFillLayout } from "~uikit/ui/q-layout";
 
 defineOptions({
   name: "app",
