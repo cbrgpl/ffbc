@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { Primitive, type PrimitiveProps } from "reka-ui";
+import { ref } from "vue";
 
 defineOptions({
   name: "q-ripple",
@@ -109,6 +110,7 @@ const onClick = (e: MouseEvent) => {
     <span
       v-for="effect of effects"
       :key="effect.id"
+      data-qt="q-ripple-effect"
       class="ripple__effect"
       :style="{
         left: effect.x,

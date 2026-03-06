@@ -20,6 +20,7 @@ defineSlots<{
 
 <template>
   <div
+    data-qt="q-button-content-root"
     :class="[
       'button-content',
       {
@@ -35,6 +36,7 @@ defineSlots<{
       <slot name="prepend"></slot>
       <QText
         v-if="props.text"
+        data-qt="q-button-content-text"
         :lines="1"
       >
         {{ props.text }}

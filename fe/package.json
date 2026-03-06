@@ -13,6 +13,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
+    "test:unit": "npx vitest .",
     "check:types": "vue-tsc --noEmit --project .nuxt/tsconfig.app.json",
     "check:linters": "npx eslint . --fix && npx stylelint '**/*{.css,.vue}' --fix",
     "prepare": "cd .. && husky fe/.husky"
@@ -23,7 +24,6 @@
     "@nuxt/icon": "^2.1.0",
     "@nuxt/image": "^2.0.0",
     "@nuxt/scripts": "^0.13.0",
-    "@nuxt/test-utils": "^3.21.0",
     "@nuxtjs/i18n": "^10.2.1",
     "@pinia/nuxt": "^0.11.3",
     "@unhead/vue": "^2.0.19",
@@ -42,11 +42,16 @@
     "@commitlint/cli": "^20.3.1",
     "@commitlint/config-conventional": "^20.3.1",
     "@commitlint/types": "^20.3.1",
+    "@nuxt/test-utils": "^4.0.0",
     "@stylistic/eslint-plugin": "^5.7.1",
     "@types/node": "^25.0.0",
+    "@vitejs/plugin-vue": "^6.0.4",
+    "@vitest/coverage-v8": "^4.0.18",
+    "@vue/test-utils": "^2.4.6",
     "commitlint": "^20.3.1",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.5",
+    "happy-dom": "^20.7.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
     "stylelint-config-clean-order": "^8.0.0",
@@ -54,6 +59,7 @@
     "stylelint-config-recommended-vue": "^1.6.1",
     "stylelint-config-standard": "^40.0.0",
     "stylelint-prettier": "^5.0.3",
+    "vitest": "^4.0.18",
     "vue-tsc": "^3.2.3"
   }
 }

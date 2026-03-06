@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { QButton, QIbutton } from "~uikit/ui/q-button";
 import { QFab } from "~uikit/ui/q-fab";
+import { QLoadingIndicators } from "~uikit/ui/q-loading-indicators";
 
 import { QButtonGroup, QConnectedButtonGroup, type ConnectedButtonGroupSeg } from "~uikit/ui/q-button-group";
 
@@ -34,6 +35,7 @@ const segs: ConnectedButtonGroupSeg[] = [
 
 <template>
   <div>
+    <QLoadingIndicators />
     <QFab
       variant="primary-container"
       icon="arrow_back"

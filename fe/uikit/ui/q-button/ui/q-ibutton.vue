@@ -1,14 +1,7 @@
 <script lang="ts" setup>
 import { useUiContext, type SizeProps, type UnavailableProps, type ColorProps } from "~uikit/libs/standard";
 import { QIcon, type Icons } from "~uikit/ui/q-icon";
-import {
-  QButtonBase,
-  QButtonContent,
-  useToggleCore,
-  type ToggleCoreProps,
-  type ButtonBaseProps,
-  type ButtonContentProps,
-} from "~uikit/ui/q-button-base";
+import { QButtonBase, QButtonContent, useToggleCore, type ToggleCoreProps, type ButtonBaseProps } from "~uikit/ui/q-button-base";
 
 import { useButtonBaseMapping, type ButtonProps } from "../composables/use-button-base-mapping";
 import { useSize } from "../composables/use-injection";
@@ -26,7 +19,6 @@ const $props = withDefaults(
       width?: "default" | "narrow" | "wide";
     } & ButtonProps<"default" | "tonal" | "outline" | "standard"> &
       ButtonBaseProps &
-      ButtonContentProps &
       ToggleCoreProps &
       UnavailableProps &
       Pick<ColorProps, "theme"> &
@@ -83,10 +75,10 @@ const { borderRadiusClasses, buttonBaseVariant } = useToggleCore(
   >
     <QButtonContent
       class="ibutton__content"
-      :text="$props.text"
       :icon="$props.icon"
     >
       <QIcon
+        data-qt="q-ibutton-icon"
         class="ibutton__icon"
         :name="$props.icon"
       />

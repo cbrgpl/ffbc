@@ -2,7 +2,7 @@
   "include": [
     "**/*.vue",
     "**/*.ts"
-  ],
+, "../vitests.config.ts"  ],
   "compilerOptions": {
     "allowJs": false,
     "skipLibCheck": true,

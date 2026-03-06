@@ -27,6 +27,7 @@ const $props = defineProps<
     :elevation="$props.elevation"
   >
     <button
+      data-qt="q-button-base-root"
       :class="[
         'button-base',
         {

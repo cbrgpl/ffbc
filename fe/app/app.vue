@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { TooltipProvider } from "reka-ui";
 
-import "./styles/globals.css";
+import "~uikit/styles/globals.css";
 import { cssVars, useUiContext, type Themes } from "~uikit/libs/standard";
 import { QLayout, vFillLayout } from "~uikit/ui/q-layout";
 

@@ -98,6 +98,7 @@ const { borderRadiusClasses, buttonBaseVariant } = useToggleCore(
       <template #prepend>
         <QIcon
           v-if="props.icon"
+          data-qt="q-button-icon"
           class="button__icon"
           :name="props.icon"
         />
