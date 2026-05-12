@@ -4,67 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "4509724f8bf84da7",
+        "id": "710965ca1cd8cb7a",
         "type": "tabs",
         "children": [
           {
-            "id": "e7a7b303c61786dc",
+            "id": "5974ba0b72f9b061",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "FFBC FShop.md",
+                "file": "бизнес анализ/Услуга создания.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "FFBC FShop"
-            }
-          },
-          {
-            "id": "b51ad5fb05a7171f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "FFBC FShop.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "FFBC FShop"
-            }
-          },
-          {
-            "id": "05f968d9ed87518d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "бизнес анализ/Продукт.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Продукт"
-            }
-          },
-          {
-            "id": "eaa3a2af56f95f93",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "бизнес анализ/Мерки.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Мерки"
+              "title": "Услуга создания"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -228,21 +185,24 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "eaa3a2af56f95f93",
+  "active": "5974ba0b72f9b061",
   "lastOpenFiles": [
-    "бизнес анализ/Аукцион.md",
-    "agent_docs/basic-info.md",
-    "AGENTS.md",
+    "бизнес анализ/Заказ.md",
+    "бизнес анализ/Вернехнеуровневый обзор.md",
+    "бизнес анализ/Введение в бизнес процессы.md",
+    "бизнес анализ/Входные характеристики.md",
+    "бизнес анализ/Категория услуги.md",
+    "бизнес анализ/Услуга создания.md",
+    "бизнес анализ/Услуга продажи предмета.md",
     "Глоссарий.md",
+    "бизнес анализ/Верхнеуровневая схема сущностей.canvas",
+    "бизнес анализ/Аукцион.md",
+    "AGENTS.md",
     "FFBC FShop.md",
+    "agent_docs/basic-info.md",
     "AGENTS.md.md",
-    "бизнес анализ/Продукт.md",
-    "бизнес анализ/Мерки.md",
     "[[Глоссарий]].md",
     "[[Глоссарий.md",
-    "бизнес анализ/Заказ.md",
-    "бизнес анализ/Верхнеуровневая схема сущностей.canvas",
-    "бизнес анализ/Введение в бизнес процессы.md",
     "agents_docs/Untitled",
     "Untitled",
     "agent_docs",
@@ -265,9 +225,6 @@
     "Excalidraw/Scripts/Downloaded/Add Connector Point.md",
     "Excalidraw/Scripts/Downloaded",
     "Excalidraw/Scripts",
-    "Excalidraw",
-    "бизнес-процессы/Верхнеуровневая схема.md",
-    "().md",
-    "Welcome.md"
+    "Excalidraw"
   ]
 }
