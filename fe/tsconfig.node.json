@@ -1,0 +1,8 @@
+{
+  "extends": "@tsconfig/node22/tsconfig.json",
+  "files": ["commitlint.config.cjs", "eslint.config.js", "stylelint.config.cjs"],
+  "compilerOptions": {
+    "noEmit": true,
+    "resolveJsonModule": true
+  }
+}

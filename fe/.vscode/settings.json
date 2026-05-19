@@ -38,4 +38,12 @@
     { "directory": "./", "changeProcessCWD": true }
   ],
   "vue.editor.focusMode": true,
+  // "ts.preferences.autoImportFileExcludePatterns": [
+  //   "^\\.\\.?/.*/packages/shared(/|$)",
+  //   "^\\.\\.?/.*/\\.\\./\\.\\./packages/shared(/|$)"
+  // ],
+  // "js.preferences.autoImportFileExcludePatterns": [
+  //   "^\\.\\.?/.*/packages/shared(/|$)",
+  //   "^\\.\\.?/.*/\\.\\./\\.\\./packages/shared(/|$)"
+  // ]
 }

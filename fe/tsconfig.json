@@ -3,19 +3,10 @@
   "files": [],
   "references": [
     {
-      "path": "./.nuxt/tsconfig.app.json"
+      "path": "./apps/admin-panel"
     },
     {
-      "path": "./.nuxt/tsconfig.server.json"
-    },
-    {
-      "path": "./.nuxt/tsconfig.shared.json"
-    },
-    {
-      "path": "./.nuxt/tsconfig.node.json"
-    },
-    {
-      "path": "./uikit/tsconfig.json"
+      "path": "./packages/shared/tsconfig.json"
     }
   ]
 }
