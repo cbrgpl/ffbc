@@ -1,4 +1,5 @@
 module.exports = {
+  ignoreFiles: ["**/dist", "**/dist/**"],
   plugins: ["stylelint-prettier"],
   extends: ["stylelint-config-html", "stylelint-config-standard", "stylelint-config-recommended-vue", "stylelint-config-clean-order/error"],
   rules: {
@@ -8,6 +9,12 @@ module.exports = {
     "alpha-value-notation": "number",
     "color-function-notation": "modern",
     "custom-property-empty-line-before": "never",
+    "at-rule-no-unknown": [
+      true,
+      {
+        ignoreAtRules: ["theme"],
+      },
+    ],
     "selector-pseudo-class-no-unknown": [
       true,
       {

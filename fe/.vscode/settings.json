@@ -12,7 +12,7 @@
     "scss",
     "vue",
     "html",
-    "vue"
+    "tailwindcss"
   ],
   "[markdown]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint",
@@ -38,4 +38,12 @@
     { "directory": "./", "changeProcessCWD": true }
   ],
   "vue.editor.focusMode": true,
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+  "tailwindCSS.classAttributes": ["class", "ui"],
+  "tailwindCSS.classFunctions": ["defineAppConfig"]
 }
