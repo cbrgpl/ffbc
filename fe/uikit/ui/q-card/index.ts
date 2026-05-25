@@ -1,1 +1,0 @@
-export { default as QCard } from "./ui/q-card.vue";

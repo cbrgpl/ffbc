@@ -1,5 +1,8 @@
 import { defineConfig } from "eslint/config";
 import globals from "globals";
+import pluginVue from "eslint-plugin-vue";
+import parserVue from "vue-eslint-parser";
+import parserTypeScript from "@typescript-eslint/parser";
 
 /** Runs prettier as eslint rule */
 import pluginPrettierRecommended from "eslint-plugin-prettier/recommended";
@@ -7,8 +10,6 @@ import pluginPrettierRecommended from "eslint-plugin-prettier/recommended";
 import configPrettier from "eslint-config-prettier/flat";
 /** ESLint Stylistic is a collection of stylistic rules for ESLint, migrated from eslint core and @typescript-eslint repo to shift the maintenance effort to the community. */
 import pluginStylistic from "@stylistic/eslint-plugin";
-
-import withNuxt from "./.nuxt/eslint.config.mjs";
 
 /** Used to define files env as node */
 const NODE_ENV_GLOBS = ["eslint.config.js"];
@@ -20,23 +21,29 @@ const createConfigs = () => {
   const eslintConfig = createEslintConfig();
   const vueConfig = createVueConfig();
 
-  return withNuxt(
-    ...ignoresConfig.configs,
-    ...eslintConfig.configs,
-    ...stylisticConfig.configs,
-    ...prettierConfig.configs,
-    ...vueConfig.configs,
-  );
+  return [...ignoresConfig.configs, ...eslintConfig.configs, ...stylisticConfig.configs, ...prettierConfig.configs, ...vueConfig.configs];
 };
 
 export default createConfigs();
 
 function createIgnoresConfigs() {
-  const config = defineConfig({
-    ignores: ["**/*.css", "**/node_modules", "**/.husky", "**/.git", "**/.vscode", "**/build", "**/.output", "**/public", "**/.nuxt"],
+  const configs = defineConfig({
+    ignores: [
+      "**/*.css",
+      "**/node_modules",
+      "**/.husky",
+      "**/.git",
+      "**/.vscode",
+      "**/build",
+      "**/dist",
+      "**/dist/**",
+      "**/.output",
+      "**/public",
+      "**/.nuxt",
+    ],
   });
 
-  return { configs: [config] };
+  return { configs };
 }
 
 function createPrettierConfig() {
@@ -104,6 +111,16 @@ function createEslintConfig() {
   return {
     configs: [
       {
+        files: ["**/*.ts"],
+        languageOptions: {
+          parser: parserTypeScript,
+          parserOptions: {
+            ecmaVersion: "latest",
+            sourceType: "module",
+          },
+        },
+      },
+      {
         files: ["**/*.js"],
         languageOptions: {
           globals: {
@@ -160,6 +177,17 @@ function createEslintConfig() {
 function createVueConfig() {
   const config = {
     files: ["**/*.vue"],
+    plugins: {
+      vue: pluginVue,
+    },
+    languageOptions: {
+      parser: parserVue,
+      parserOptions: {
+        parser: parserTypeScript,
+        ecmaVersion: "latest",
+        sourceType: "module",
+      },
+    },
     rules: {
       "vue/attributes-order": [
         "error",
