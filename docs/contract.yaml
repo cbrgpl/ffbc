@@ -1,0 +1,296 @@
+openapi: 3.1.0
+info:
+  title: FFBC Admin panel
+  description: |-
+    This is API for FFBC Admin panel service. It supports CRUDS for all entities in the platform.
+
+    - [FFBC Documentation](https://github.com/cbrgpl/ffbc/tree/main/docs)
+
+  termsOfService: https://swagger.io/terms/
+  contact:
+    email: apiteam@swagger.io
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.0
+externalDocs:
+  description: Find out more about Swagger
+  url: https://swagger.io
+servers:
+  # Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/cybirgplorganization/ffbc-admin-panel/1.0.0
+  - url: https://petstore31.swagger.io/api/v3
+tags:
+  - name: pet
+    description: Everything about your Pets
+    externalDocs:
+      description: Find out more
+      url: https://swagger.io
+  - name: store
+    description: Access to Petstore orders
+    externalDocs:
+      description: Find out more about our store
+      url: https://swagger.io
+  - name: user
+    description: Operations about user
+paths:
+  /input-characteristic:
+    get:
+      tags:
+        - input-characteristic
+      summary: Get characteristics list
+      operationId: getInputCharacteristics
+      parameters:
+        - name: search
+          in: query
+          description: Value which used to filter records
+          required: false
+          schema:
+            type: string
+        - name: offset
+          in: query
+          description: Number of records to skip before returning results.
+          required: false
+          schema:
+            type: integer
+            minimum: 0
+            default: 0
+        - name: count
+          in: query
+          description: Maximum number of records to return.
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            default: 20
+      responses:
+        '200':
+          description:
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/InputCharacteristicDto'
+        '204':
+          description:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InputCharacteristicDto'
+        '400':
+          description:
+          content: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+      security:
+        - ffbc_admin_auth:
+            - admin
+    post:
+      tags:
+        - input-characteristic
+      summary: Add a new input characteristic.
+      operationId: createInputCharacteristic
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InputCharacteristicCreateDto'
+        required: true
+      responses:
+        '200':
+          description:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InputCharacteristicDto'
+        '400':
+          description:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '422':
+          description:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+      security:
+        - ffbc_admin_auth:
+            - admin
+  /input-characteristic/{id}:
+    patch:
+      tags:
+        - input-characteristic
+      summary: Change existing input characteristic.
+      operationId: updateInputCharacteristic
+      parameters:
+        - name: id
+          in: path
+          description: Value which used to filter records
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InputCharacteristicUpdateDto'
+        required: true
+      responses:
+        '200':
+          description:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InputCharacteristicDto'
+        '400':
+          description:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '422':
+          description:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+      security:
+        - ffbc_admin_auth:
+            - admin
+  /input-characteristic/bulk:
+    post:
+      tags:
+        - input-characteristic
+      summary: Add a new input characteristic.
+      operationId: bulkCreateInputCharacteristic
+      requestBody:
+        content:
+          application/json:
+            type: array
+            items:
+              schema:
+                $ref: '#/components/schemas/InputCharacteristicCreateDto'
+        required: true
+      responses:
+        '200':
+          description:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InputCharacteristicDto'
+        '400':
+          description:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '422':
+          description:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+      security:
+        - ffbc_admin_auth:
+            - admin
+
+components:
+  schemas:
+    InputCharacteristicsType:
+      type: string
+      enum:
+        - number
+        - measuring
+        - text
+        - boolean
+        - media
+    InputCharacteristicDto: 
+      type: object
+      properties:
+        id:
+          type: number
+          format: int64
+        name:
+          type: string
+        type:
+            $ref: '#/components/schemas/InputCharacteristicsType'
+    InputCharacteristicCreateDto:
+      type: object
+      properties:
+        name:
+          type: string
+        type:
+          $ref: '#/components/schemas/InputCharacteristicsType'
+    InputCharacteristicUpdateDto:
+      type: object
+      properties:
+        name:
+          type: string
+        type:
+          $ref: '#/components/schemas/InputCharacteristicsType'
+      
+    Error:
+      type: object
+      properties:
+        message:
+          type: string
+  requestBodies:
+    Pet:
+      description: Pet object that needs to be added to the store
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InputCharacteristicDto'
+        application/xml:
+          schema:
+            $ref: '#/components/schemas/InputCharacteristicDto'
+    UserArray:
+      description: List of user object
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/InputCharacteristicDto'
+  securitySchemes:
+    ffbc_admin_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://petstore3.swagger.io/oauth/authorize
+          scopes:
+            admin: full administrative access
+    api_key:
+      type: apiKey
+      name: api_key
+      in: header
