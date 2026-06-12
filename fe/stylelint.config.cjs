@@ -9,6 +9,7 @@ module.exports = {
     "alpha-value-notation": "number",
     "color-function-notation": "modern",
     "custom-property-empty-line-before": "never",
+    "import-notation": null,
     "at-rule-no-unknown": [
       true,
       {
