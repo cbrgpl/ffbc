@@ -1,48 +1,47 @@
 # admin-panel
 
-This template should help get you started developing with Vue 3 in Vite.
+## Envs list
 
-## Recommended IDE Setup
+| Name             | Type                 | Description                                                                                                     |
+| ---------------- | -------------------- | --------------------------------------------------------------------------------------------------------------- |
+| VITE_API_MOCKING | enabled \| undefined | Enables MSW browser mocks in dev mode when set to `enabled`. Leave empty or unset to use real network requests. |
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## CI/CD build app (mock for while)
 
-## Recommended Browser Setup
+Mock flow for now. Build app from `apps/admin-panel` after deps installed:
+`npm run build`.
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+## Local API start (mock for while)
 
-## Type Support for `.vue` Imports in TS
+Mock flow for now. Local real API start guide will be added later.
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+## Local mock start
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
+Pre requirements: `VITE_API_MOCKING` **MUST BE** `enabled`
 
 ```sh
-npm install
-```
+npm i
 
-### Compile and Hot-Reload for Development
+// generate mock api
+npm run mock:api:generate
+// install MSW worker into public
+npm run mock:init
 
-```sh
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+## API mocking
 
-```sh
-npm run build
-```
+API mocks are generated from `mock/swagger.yaml` by Orval config in `mock/orval.config.ts`.
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+`npm run mock:api:generate` writes fetch client, types, and MSW handlers into `src/shared/api/generated`.
 
-```sh
-npm run test:unit
-```
+- Browser mocking uses MSW worker from `src/shared/api/mocks/browser.ts`.
+  App enables it only in dev mode when `VITE_API_MOCKING=enabled`.
+  Use `.env.example` as env sample.
+
+- Tests use MSW server from `src/shared/api/mocks/server.ts`.
+  Both browser and test mocks combine generated handlers from `getFFBCAdminPanelAPIMock()` with manual handlers from `src/shared/api/mocks/manual-handlers.ts`.
+
+Manual handlers cover custom cases that are not generated from Swagger:
+`GET /health` returns `{ status: 'ok' }`, and `POST /file-storage/file` passes through to real network.

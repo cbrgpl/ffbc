@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "test:unit": "vitest",
     "build-only": "vite build",
-    "type-check": "vue-tsc --build"
+    "mock:api:generate": "orval --config mock/orval.config.ts",
+    "mock:init": "msw init ./public --save"
   },
   "dependencies": {
     "@ffbc/shared": "*",
@@ -21,6 +22,7 @@
     "vue-router": "^5.0.4"
   },
   "devDependencies": {
+    "@faker-js/faker": "^10.4.0",
     "@pinia/colada-devtools": "^1.0.0",
     "@tsconfig/node24": "^24.0.4",
     "@types/jsdom": "^28.0.1",
@@ -29,7 +31,10 @@
     "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.9.1",
     "jsdom": "^29.0.2",
+    "msw": "^2.14.6",
     "npm-run-all2": "^8.0.4",
+    "orval": "^8.16.0",
+    "silly": "^0.2.0",
     "typescript": "~6.0.0",
     "vite": "^8.0.8",
     "vite-plugin-vue-devtools": "^8.1.1",
@@ -53,5 +58,10 @@
     "@vue/server-renderer": "beta",
     "@vue/shared": "beta",
     "@vue/compat": "beta"
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
   }
 }
