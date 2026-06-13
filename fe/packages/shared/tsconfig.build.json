@@ -1,0 +1,25 @@
+{
+  "extends": "./tsconfig.app.json",
+  "include": [
+    "env.d.ts",
+    "components.auto.d.ts",
+    "auto-imports.auto.d.ts",
+    "index.ts",
+    "libs/**/*.ts",
+    "nuxt-ui/**/*.ts",
+    "ui/**/*.ts",
+    "ui/**/*.vue"
+  ],
+  "exclude": [
+    "**/*.test.*",
+    "**/*.spec.*",
+    "**/__tests__/**",
+    "vitests.setup.ts"
+  ],
+  "compilerOptions": {
+    "noEmit": false,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.build.tsbuildinfo"
+  }
+}

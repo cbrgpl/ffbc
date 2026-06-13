@@ -4,8 +4,11 @@
     "env.d.ts",
     "components.auto.d.ts",
     "auto-imports.auto.d.ts",
-    "src/**/*",
-    "src/**/*.vue",
+    "index.ts",
+    "libs/**/*.ts",
+    "nuxt-ui/**/*.ts",
+    "ui/**/*.ts",
+    "ui/**/*.vue",
     "vitests.setup.ts"
   ],
   "exclude": ["src/**/__tests__/*"],
