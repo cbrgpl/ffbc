@@ -2,13 +2,15 @@
 import { PiniaColadaDevtools } from "@pinia/colada-devtools";
 
 defineOptions({
-  name: "app",
+  name: "q-app",
 });
 </script>
 
 <template>
   <UApp>
-    <RouterView />
+    <UMain>
+      <RouterView />
+    </UMain>
     <PiniaColadaDevtools />
   </UApp>
 </template>

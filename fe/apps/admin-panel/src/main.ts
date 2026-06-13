@@ -6,7 +6,7 @@ import { createPinia } from "pinia";
 import { PiniaColada } from "@pinia/colada";
 import nuxtUi from "@nuxt/ui/vue-plugin";
 
-import App from "./app/App.vue";
+import QApp from "./app/q-app.vue";
 import router from "./app/router";
 
 async function enableMocking() {
@@ -25,7 +25,7 @@ async function enableMocking() {
   });
 }
 
-const app = createApp(App);
+const app = createApp(QApp);
 const pinia = createPinia();
 
 app.use(pinia as unknown as Plugin);
