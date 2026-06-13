@@ -1,5 +1,7 @@
 import path from "node:path";
 
+import { nuxtUiConfig } from "@ffbc/shared/nuxt-ui";
+
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
@@ -30,7 +32,9 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ["@nuxt/eslint", "@nuxt/image", "@nuxt/scripts", "@nuxt/test-utils", "@nuxtjs/i18n", "@pinia/nuxt"],
+  modules: ["@nuxt/eslint", "@nuxt/image", "@nuxt/scripts", "@nuxt/test-utils", "@nuxt/ui", "@nuxtjs/i18n", "@pinia/nuxt"],
+
+  ui: nuxtUiConfig,
 
   // icon: {
   //   serverBundle: "local",

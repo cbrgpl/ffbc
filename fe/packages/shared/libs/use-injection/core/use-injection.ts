@@ -1,4 +1,4 @@
-import { type InjectionKey, toValue, computed } from "vue";
+import { type InjectionKey, type MaybeRefOrGetter, computed, inject, provide, toValue } from "vue";
 
 export const useProvide = <T>(key: InjectionKey<T>, v: MaybeRefOrGetter<T>) => {
   provide(key, computed(() => toValue(v)) as T);

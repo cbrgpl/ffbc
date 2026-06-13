@@ -1,0 +1,1 @@
+export { nuxtUiConfig } from "./config";

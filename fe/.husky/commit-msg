@@ -1,2 +1,4 @@
+commit_msg_file="$(realpath "$1")"
+
 cd fe
-npx --no -- commitlint --edit $1
+npx --no -- commitlint --edit "$commit_msg_file"

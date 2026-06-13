@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
-    "test:unit": "vitest",
+    "check:tests:unit": "vitest",
     "build-only": "vite build",
     "mock:api:generate": "orval --config mock/orval.config.ts",
     "mock:init": "msw init ./public --save"
@@ -19,10 +19,12 @@
     "pinia": "^3.0.4",
     "tailwindcss": "^4.3.0",
     "vue": "^3.5.34",
-    "vue-router": "^5.0.4"
+    "vue-router": "^5.0.4",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@faker-js/faker": "^10.4.0",
+    "@iconify-json/mdi": "^1.2.3",
     "@pinia/colada-devtools": "^1.0.0",
     "@tsconfig/node24": "^24.0.4",
     "@types/jsdom": "^28.0.1",
@@ -34,8 +36,8 @@
     "msw": "^2.14.6",
     "npm-run-all2": "^8.0.4",
     "orval": "^8.16.0",
-    "silly": "^0.2.0",
     "typescript": "~6.0.0",
+    "unplugin-icons": "^23.0.1",
     "vite": "^8.0.8",
     "vite-plugin-vue-devtools": "^8.1.1",
     "vitest": "^4.1.4",
