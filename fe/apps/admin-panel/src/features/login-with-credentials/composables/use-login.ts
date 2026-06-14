@@ -1,36 +1,27 @@
-import { useSessionStore, type Session } from "@/entities/session";
+import { useSession } from "@/entities/session";
 import { ref } from "vue";
+import { type LoginCredentials, loginWithCredentials } from "../api/login-with-credentials";
 
-import { loginWithCredentials } from "@/shared/api/generated/api";
-
-export type LoginCredentials = { login: string; password: string };
+export type { LoginCredentials } from "../api/login-with-credentials";
 
 export const useLogin = () => {
   const loginProcessing = ref(false);
+  const { initSession } = useSession();
 
   const login = async (credentials: LoginCredentials, abort?: AbortSignal) => {
     try {
       loginProcessing.value = true;
+      const loggedIn = await loginWithCredentials(credentials, abort);
 
-      const response = await loginWithCredentials(
-        {
-          email: credentials.login,
-          password: credentials.password,
-        },
-        { signal: abort },
-      );
-
-      if (response.status === 200) {
-        return true;
-      } else if (response.status === 401) {
-        return false;
-      }
-    } catch (e) {
-      if (e instanceof DOMException && e.name === "AbortError") {
+      if (!loggedIn) {
         return null;
       }
 
-      throw e;
+      await initSession();
+
+      return loggedIn;
+    } catch (e) {
+      throw new Error("Unexpected error caused while loginning in", { cause: e });
     } finally {
       loginProcessing.value = false;
     }

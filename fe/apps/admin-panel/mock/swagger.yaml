@@ -29,7 +29,7 @@ tags:
   - name: s3
     description: S3 compatible file operations
 paths:
-  /auth/login-with-credentials:
+  /admin/auth/login:
     post:
       tags:
         - auth
@@ -68,7 +68,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /auth/logout:
+  /admin/auth/logout:
     post:
       tags:
         - auth
@@ -77,6 +77,34 @@ paths:
       responses:
         '204':
           description: Logged out.
+        '401':
+          description: Unauthorized.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        default:
+          description: Unexpected error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      security:
+        - ffbc_admin_auth:
+            - admin
+  /admin/user/me:
+    get:
+      tags:
+        - auth
+      summary: Get current admin user.
+      operationId: getAdminUserMe
+      responses:
+        '200':
+          description: Current admin user.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SessionDto'
         '401':
           description: Unauthorized.
           content:
@@ -1278,6 +1306,17 @@ paths:
             - admin
 components:
   schemas:
+    SessionDto:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+        id:
+          type: string
+      required:
+        - email
+        - id
     LoginWithCredentialsRequestDto:
       type: object
       properties:

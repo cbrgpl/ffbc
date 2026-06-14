@@ -1,4 +1,8 @@
 <script lang="ts" setup>
+import { QLogoutButton } from "@/features/logout";
+import { useRouter } from "vue-router";
+import QMainSidebar from "./q-main-sidebar.vue";
+
 defineOptions({
   name: "q-main-layout",
 });
@@ -6,6 +10,8 @@ defineOptions({
 defineSlots<{
   default?: () => unknown;
 }>();
+
+const router = useRouter();
 </script>
 
 <template>
@@ -14,14 +20,13 @@ defineSlots<{
       :toggle="false"
       class="main-layout__header"
     >
-      <template #left></template>
+      <template #left>
+        <QLogoutButton @logged-out="router.push({ name: 'Auth' })" />
+      </template>
     </UHeader>
 
     <div class="main-layout__body">
-      <USidebar
-        collapsible="none"
-        class="main-layout__sidebar"
-      />
+      <QMainSidebar />
 
       <UMain class="main-layout__main">
         <RouterView />
@@ -44,14 +49,17 @@ defineSlots<{
 .main-layout__body {
   display: flex;
   flex: 1;
+  height: calc(100vh - var(--ui-header-height));
   min-height: 0;
 }
 
-.main-layout__sidebar {
+:deep(.main-layout__sidebar) {
   flex-shrink: 0;
+  height: calc(100vh - var(--ui-header-height));
 }
 
 .main-layout__main {
+  overflow: auto;
   flex: 1;
   min-width: 0;
 }

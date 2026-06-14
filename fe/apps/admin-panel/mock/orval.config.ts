@@ -12,6 +12,14 @@ export default defineConfig({
       target: "./../src/shared/api/generated/api.ts",
       schemas: "./../src/shared/api/generated/model",
       client: "fetch",
+      baseUrl: {
+        runtime: "import.meta.env.VITE_BE_URL",
+      },
+      override: {
+        requestOptions: {
+          credentials: "include",
+        },
+      },
       mock: {
         generators: [
           {
