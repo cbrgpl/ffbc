@@ -1,5 +1,7 @@
 import { defineConfig } from "orval";
 
+const randomDelay = () => 1000 + (5000 - 1000) * Math.random();
+
 export default defineConfig({
   api: {
     input: {
@@ -15,6 +17,8 @@ export default defineConfig({
           {
             type: "msw",
             preferredContentType: "application/json",
+            delay: randomDelay,
+            delayFunctionLazyExecute: true,
           },
         ],
       },
