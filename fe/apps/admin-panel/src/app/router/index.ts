@@ -21,13 +21,14 @@ const router = createRouter({
       ],
     },
     {
-      path: "/home",
       component: () => import("@/layouts/q-empty-layout"),
-      redirect: { name: "Auth" },
+      path: "/home",
+      redirect: { name: "Home" },
       children: [
         {
+          name: "Home",
           path: "",
-          component: () => import("@/layouts/q-empty-layout"),
+          component: () => import("@/pages/home"),
         },
       ],
     },
