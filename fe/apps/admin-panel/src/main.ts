@@ -9,6 +9,8 @@ import nuxtUi from "@nuxt/ui/vue-plugin";
 import QApp from "./app/q-app.vue";
 import router from "./app/router";
 
+import { setupZod } from "./zod.config.ts";
+
 async function enableMocking() {
   if (!import.meta.env.DEV) {
     return;
@@ -24,6 +26,8 @@ async function enableMocking() {
     onUnhandledRequest: "bypass",
   });
 }
+
+setupZod();
 
 const app = createApp(QApp);
 const pinia = createPinia();
