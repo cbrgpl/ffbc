@@ -45,5 +45,8 @@
     "strings": "on"
   },
   "tailwindCSS.classAttributes": ["class", "ui"],
-  "tailwindCSS.classFunctions": ["defineAppConfig"]
+  "tailwindCSS.classFunctions": [
+    "defineAppConfig"
+  ],
+  "js/ts.tsdk.path": "node_modules/typescript/lib"
 }

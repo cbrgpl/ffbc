@@ -16,6 +16,8 @@ servers:
   - url: https://virtserver.swaggerhub.com/cybirgplorganization/ffbc-admin-panel/1.0.0
     description: SwaggerHub API Auto Mocking
 tags:
+  - name: auth
+    description: Authentication operations
   - name: input-characteristic
     description: Input characteristic operations
   - name: service-category
@@ -27,6 +29,97 @@ tags:
   - name: s3
     description: S3 compatible file operations
 paths:
+  /admin/auth/login:
+    post:
+      tags:
+        - auth
+      summary: Login with credentials.
+      operationId: loginWithCredentials
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginWithCredentialsRequestDto'
+      responses:
+        '200':
+          description: Logged in. Authentication tokens are stored in cookies.
+        '400':
+          description: Bad request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '422':
+          description: Validation error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        default:
+          description: Unexpected error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /admin/auth/logout:
+    post:
+      tags:
+        - auth
+      summary: Logout current user.
+      operationId: logout
+      responses:
+        '204':
+          description: Logged out.
+        '401':
+          description: Unauthorized.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        default:
+          description: Unexpected error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      security:
+        - ffbc_admin_auth:
+            - admin
+  /admin/user/me:
+    get:
+      tags:
+        - auth
+      summary: Get current admin user.
+      operationId: getAdminUserMe
+      responses:
+        '200':
+          description: Current admin user.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SessionDto'
+        '401':
+          description: Unauthorized.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        default:
+          description: Unexpected error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      security:
+        - ffbc_admin_auth:
+            - admin
   /input-characteristic:
     get:
       tags:
@@ -1213,6 +1306,29 @@ paths:
             - admin
 components:
   schemas:
+    SessionDto:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+        id:
+          type: string
+      required:
+        - email
+        - id
+    LoginWithCredentialsRequestDto:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+          format: password
+      required:
+        - email
+        - password
     InputCharacteristicsType:
       type: string
       enum:

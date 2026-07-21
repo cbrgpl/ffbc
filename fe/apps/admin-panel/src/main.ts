@@ -6,8 +6,10 @@ import { createPinia } from "pinia";
 import { PiniaColada } from "@pinia/colada";
 import nuxtUi from "@nuxt/ui/vue-plugin";
 
-import App from "./app/App.vue";
+import QApp from "./app/q-app.vue";
 import router from "./app/router";
+
+import { setupZod } from "./zod.config.ts";
 
 async function enableMocking() {
   if (!import.meta.env.DEV) {
@@ -25,7 +27,9 @@ async function enableMocking() {
   });
 }
 
-const app = createApp(App);
+setupZod();
+
+const app = createApp(QApp);
 const pinia = createPinia();
 
 app.use(pinia as unknown as Plugin);

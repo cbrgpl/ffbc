@@ -15,5 +15,10 @@ export const nuxtUiConfig = {
       neutral: "neutral",
       test: "sadas",
     },
+    button: {
+      slots: {
+        base: "cursor-pointer",
+      },
+    },
   },
 } satisfies NuxtUIOptions;

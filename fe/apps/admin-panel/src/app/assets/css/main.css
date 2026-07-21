@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
+@import "@ffbc/shared/style.css";
 
 @theme static {
   --color-primary-50: #fce9ec;

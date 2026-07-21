@@ -13,6 +13,9 @@
     "./nuxt-ui": {
       "types": "./dist/nuxt-ui/index.d.ts",
       "import": "./dist/nuxt-ui.js"
+    },
+    "./style.css": {
+      "import": "./dist/shared.css"
     }
   },
   "scripts": {
