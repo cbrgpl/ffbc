@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { useLogout } from "../../../composables/use-logout";
+import { usePointer } from "@vueuse/core";
 
 defineOptions({
   name: "q-logout-button",
@@ -18,6 +19,8 @@ const $emit = defineEmits<{
   loggedOut: [];
 }>();
 
+const { pointerType } = usePointer();
+
 const { logout, logoutProcessing } = useLogout();
 
 const handleClick = async () => {
@@ -32,13 +35,19 @@ const handleClick = async () => {
 </script>
 
 <template>
-  <UButton
-    color="neutral"
-    variant="ghost"
-    icon="i-lucide-log-out"
-    :label="$props.label ? 'Logout' : undefined"
-    :loading="logoutProcessing"
-    :disabled="logoutProcessing"
-    @click="handleClick"
-  />
+  <UTooltip
+    text="Logout"
+    :disabled="pointerType !== 'mouse'"
+    :ui="{ content: 'z-60' }"
+  >
+    <UButton
+      color="neutral"
+      variant="ghost"
+      icon="i-lucide-log-out"
+      :label="$props.label ? 'Logout' : undefined"
+      :loading="logoutProcessing"
+      :disabled="logoutProcessing"
+      @click="handleClick"
+    />
+  </UTooltip>
 </template>
