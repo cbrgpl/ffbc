@@ -51,13 +51,14 @@ watch(
     @update:open="$emit('update:open', $event)"
   >
     <template #header></template>
-    <template #default>
+    <template #default="{ state }">
       <UNavigationMenu
         :items="mainLayoutNavigation"
         orientation="vertical"
         color="primary"
+        :collapsed="state === 'collapsed'"
         :ui="{
-          link: 'py-2.5 px-3 border-l border-primary-100 cursor-pointer data-active:cursor-default data-active:border-primary-300 trasnition-all duration-150',
+          link: 'border-l border-primary-100 cursor-pointer data-active:cursor-default data-active:border-primary-300 trasnition-all duration-150',
         }"
       />
     </template>
