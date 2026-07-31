@@ -6,7 +6,6 @@ import nuxtUi from "@nuxt/ui/vite";
 import vueDevTools from "vite-plugin-vue-devtools";
 import Icons from "unplugin-icons/vite";
 import { nuxtUiConfig } from "@ffbc/shared/nuxt-ui";
-
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [

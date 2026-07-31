@@ -2,6 +2,8 @@
 import { QLogoutButton } from "@/features/logout";
 import { useRouter } from "vue-router";
 import QMainSidebar from "./q-main-sidebar.vue";
+import QSidebarButton from "./q-sidebar-button.vue";
+import { ref } from "vue";
 
 defineOptions({
   name: "q-main-layout",
@@ -12,6 +14,7 @@ defineSlots<{
 }>();
 
 const router = useRouter();
+const sidebarIsOpened = ref(true);
 </script>
 
 <template>
@@ -21,13 +24,19 @@ const router = useRouter();
       class="main-layout__header"
     >
       <template #left>
-        <QLogoutButton @logged-out="router.push({ name: 'Auth' })" />
+        <QSidebarButton @click="sidebarIsOpened = !sidebarIsOpened" />
+        <QLogoutButton
+          :label="false"
+          @logged-out="router.push({ name: 'Auth' })"
+        />
       </template>
     </UHeader>
 
     <div class="main-layout__body">
-      <QMainSidebar />
-
+      <QMainSidebar
+        :open="sidebarIsOpened"
+        @update:open="sidebarIsOpened = $event"
+      />
       <UMain class="main-layout__main">
         <RouterView />
       </UMain>
