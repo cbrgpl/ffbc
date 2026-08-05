@@ -8,7 +8,10 @@ defineOptions({
 </script>
 
 <template>
-  <QPageContainer view="fixed">
+  <QPageContainer
+    title="Input characteristics"
+    view="fixed"
+  >
     <QInputCharTable />
   </QPageContainer>
 </template>

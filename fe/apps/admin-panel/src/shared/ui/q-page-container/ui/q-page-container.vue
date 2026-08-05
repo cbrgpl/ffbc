@@ -5,6 +5,7 @@ defineOptions({
 
 const $props = withDefaults(
   defineProps<{
+    title?: string;
     view?: "fixed" | "unbound";
   }>(),
   {
@@ -14,6 +15,7 @@ const $props = withDefaults(
 
 defineSlots<{
   default?: () => unknown;
+  title?: () => unknown;
 }>();
 </script>
 
@@ -27,6 +29,12 @@ defineSlots<{
       },
     ]"
   >
+    <h1
+      v-if="$slots.title || $props.title"
+      class="mb-6 text-2xl font-bold"
+    >
+      <slot name="title">{{ $props.title }}</slot>
+    </h1>
     <slot></slot>
   </UContainer>
 </template>
