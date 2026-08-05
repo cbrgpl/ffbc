@@ -69,7 +69,10 @@ const sidebarIsOpened = ref(true);
 
 .main-layout__main {
   overflow: auto;
+  display: flex;
   flex: 1;
+  flex-direction: column;
+
   min-width: 0;
 }
 </style>

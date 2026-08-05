@@ -51,6 +51,11 @@ const router = createRouter({
           path: "services",
           component: () => import("@/pages/services/index.ts"),
         },
+        {
+          name: "InputCharsList",
+          path: "input-chars",
+          component: () => import("@/pages/input-chars-list/index.ts"),
+        },
       ],
     },
     {

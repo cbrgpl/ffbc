@@ -86,3 +86,8 @@
   --font-sans: "Ubuntu", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 }
+
+html {
+  overflow: hidden;
+  height: 100dvh;
+}

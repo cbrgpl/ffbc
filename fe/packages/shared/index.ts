@@ -5,3 +5,4 @@ export { devWarn } from "./libs/logging";
 export { useInjection } from "./libs/use-injection";
 export { ExampleComponent } from "./ui/q-example-component";
 export { QFadeTransition } from "./ui/q-fade-transition";
+export { ABORT_ERROR, initAbort } from "./libs/abort";

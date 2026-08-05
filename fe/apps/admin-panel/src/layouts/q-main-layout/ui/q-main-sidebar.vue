@@ -22,6 +22,7 @@ const isMainLayoutRoute = (name: string) => {
   return (
     name === MainLayoutRouteNames.CATEGORIES ||
     name === MainLayoutRouteNames.HOME ||
+    name === MainLayoutRouteNames.INPUT_CHARACTERISTICS ||
     name === MainLayoutRouteNames.SERVICES ||
     name === MainLayoutRouteNames.TEMPLATES
   );
