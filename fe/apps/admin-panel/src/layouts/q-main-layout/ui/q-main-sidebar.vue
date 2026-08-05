@@ -2,6 +2,7 @@
 import { useRoute } from "vue-router";
 import { mainLayoutNavigation, MainLayoutRouteNames } from "../static/main-layout-navigation";
 import { watch } from "vue";
+import { breakpointsTailwind, useBreakpoints } from "@vueuse/core";
 
 defineOptions({
   name: "q-main-sidebar",
@@ -28,6 +29,8 @@ const isMainLayoutRoute = (name: string) => {
   );
 };
 
+const isMobile = useBreakpoints(breakpointsTailwind).smaller("lg");
+
 watch(
   () => currentRoute.matched,
   (matched) => {
@@ -35,7 +38,7 @@ watch(
 
     if (newActiveOption === null) {
       return;
-    } else if (newActiveOption !== oldActiveOption) {
+    } else if (newActiveOption !== oldActiveOption && isMobile.value) {
       oldActiveOption = newActiveOption as MainLayoutRouteNames;
       $emit("update:open", false);
     }
@@ -48,7 +51,7 @@ watch(
     collapsible="icon"
     :close="false"
     :open="$props.open"
-    class="main-layout__sidebar"
+    class="z-0"
     @update:open="$emit('update:open', $event)"
   >
     <template #header></template>
@@ -56,10 +59,12 @@ watch(
       <UNavigationMenu
         :items="mainLayoutNavigation"
         orientation="vertical"
-        color="primary"
+        color="secondary"
         :collapsed="state === 'collapsed'"
+        popover
         :ui="{
-          link: 'border-l border-primary-100 cursor-pointer data-active:cursor-default data-active:border-primary-300 trasnition-all duration-150',
+          link: 'border-l border-secondary-100 cursor-pointer data-active:cursor-default data-active:border-secondary-300 trasnition-all duration-150',
+          childList: 'border-0',
         }"
       />
     </template>

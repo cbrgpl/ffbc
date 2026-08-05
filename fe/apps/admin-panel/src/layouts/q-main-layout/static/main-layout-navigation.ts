@@ -17,7 +17,7 @@ export const mainLayoutNavigation: Array<NavigationMenuItem> = [
   { label: "Services", to: { name: MainLayoutRouteNames.SERVICES }, icon: "i-mdi-room-service" },
   { label: "Categories", disabled: true, to: { name: MainLayoutRouteNames.CATEGORIES }, icon: "i-mdi-filter-cog" },
   {
-    label: "Input Characteristics",
+    label: "User inputs",
     icon: "i-mdi-form-select",
     children: [
       {

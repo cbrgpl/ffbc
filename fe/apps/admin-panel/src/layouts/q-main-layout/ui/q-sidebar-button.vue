@@ -16,6 +16,7 @@ const { pointerType } = usePointer();
   >
     <UButton
       icon="i-lucide-menu"
+      color="neutral"
       variant="ghost"
     />
   </UTooltip>
