@@ -102,6 +102,8 @@ useTableDepending({
         error-title="Failed to load input characteristics"
         @retry="refetch()"
       />
+    </template>
+    <template #pagination>
       <QPagination />
     </template>
   </QTableWrapper>

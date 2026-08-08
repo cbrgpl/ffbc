@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useDisplay } from "@/shared/utils/use-display";
+import QTablePaginationWrapper from "./q-table-pagination-wrapper.vue";
 
 defineOptions({
   name: "q-table-wrapper",
@@ -18,6 +19,8 @@ const search = defineModel<string>("search");
 
 defineSlots<{
   default?: () => unknown;
+  /** Pagination controls displayed below the table. */
+  pagination?: () => unknown;
 }>();
 
 const { isDesktop } = useDisplay();
@@ -33,5 +36,8 @@ const { isDesktop } = useDisplay();
       :placeholder="$props.searchPlaceholder"
     />
     <slot></slot>
+    <QTablePaginationWrapper v-if="$slots.pagination">
+      <slot name="pagination"></slot>
+    </QTablePaginationWrapper>
   </div>
 </template>

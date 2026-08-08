@@ -108,7 +108,7 @@ const ui = computed(() => ({
 
 <template>
   <div
-    class="relative flex min-h-0 grow flex-col overflow-hidden"
+    class="relative flex min-h-0 grow flex-col isolate overflow-hidden"
     :aria-busy="initialLoading || refreshing"
   >
     <div
