@@ -1,15 +1,14 @@
 <script lang="ts" setup>
 import type { InputChar } from "@/entities/input-char/model/input-char";
-import { computed, h, ref } from "vue";
+import { computed, h, ref, resolveComponent } from "vue";
 import { useQuery } from "@pinia/colada";
 import { refDebounced } from "@vueuse/core";
 import { QPagination, usePagination } from "@/shared/ui/q-pagination";
 import { getInputChars } from "@/entities/input-char/api/get-input-chars";
-import type { TableColumn } from "@nuxt/ui";
 import type { SortingState } from "@tanstack/vue-table";
 import { QInputCharTypeBadge } from "@/entities/input-char/ui/q-input-char-type-badge";
 
-import { QTable, QTableWrapper, useTableDepending } from "@/shared/ui/q-table";
+import { QTable, QTableWrapper, useTableDepending, type QTableColumn } from "@/shared/ui/q-table";
 
 const SEARCH_DEBOUNCE_DELAY = 750;
 
@@ -17,22 +16,30 @@ defineOptions({
   name: "q-input-char-table",
 });
 
-const columns: TableColumn<InputChar>[] = [
+const USkeleton = resolveComponent("USkeleton");
+
+const columns: QTableColumn<InputChar>[] = [
   {
     accessorKey: "id",
     header: "#",
     cell: ({ row }) => `#${row.getValue("id")}`,
     enableSorting: false,
+    skeleton: () => h(USkeleton, { class: "h-4 w-full" }),
   },
   {
     accessorKey: "name",
     header: "Name",
+    skeleton: ({ rowIndex }) =>
+      h(USkeleton, {
+        class: ["h-4", rowIndex % 2 === 0 ? "w-4/5" : "w-3/5"],
+      }),
   },
   {
     accessorKey: "type",
     header: "Type",
     cell: ({ row }) => h(QInputCharTypeBadge, { type: row.original.type }),
     enableSorting: false,
+    skeleton: () => h(USkeleton, { class: "h-5 w-16 rounded-full" }),
   },
 ];
 

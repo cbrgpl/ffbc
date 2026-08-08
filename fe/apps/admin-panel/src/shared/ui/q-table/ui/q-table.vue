@@ -1,9 +1,11 @@
 <script setup lang="ts" generic="T extends TableData">
-import type { TableColumn, TableData } from "@nuxt/ui";
+import type { TableData } from "@nuxt/ui";
 import type { HeaderContext, SortingState, TableMeta } from "@tanstack/vue-table";
 import { computed, h, resolveComponent } from "vue";
 import QFailedFetchAlert from "./q-failed-fetch-alert.vue";
-import { FAILED_FETCH_TITLE, LOADING_TITLE, EMPTY_TITLE, SORTING_OPTIONS } from "../static/index.ts";
+import QTableSkeleton from "./q-table-skeleton.vue";
+import { FAILED_FETCH_TITLE, EMPTY_TITLE, SORTING_OPTIONS } from "../static/index.ts";
+import type { QTableColumn } from "../model/q-table-column.ts";
 
 defineOptions({
   name: "q-table",
@@ -12,7 +14,7 @@ defineOptions({
 const $props = withDefaults(
   defineProps<{
     /** Column definitions used to render the table. */
-    columns: TableColumn<T>[];
+    columns: QTableColumn<T>[];
     /** Resolved rows, or `undefined` when no view data is available yet. */
     data?: T[];
     /** Whether the query is waiting for its first result. */
@@ -25,11 +27,14 @@ const $props = withDefaults(
     empty?: string;
     /** Title displayed when loading data fails. */
     errorTitle?: string;
+    /** Number of placeholder rows displayed while initial data is loading. */
+    skeletonRows?: number;
   }>(),
   {
     error: null,
     empty: EMPTY_TITLE,
     errorTitle: FAILED_FETCH_TITLE,
+    skeletonRows: 5,
   },
 );
 
@@ -48,7 +53,7 @@ defineSlots<{
 
 const UButton = resolveComponent("UButton");
 
-const withSortingHeader = (definition: TableColumn<T>): TableColumn<T> => {
+const withSortingHeader = (definition: QTableColumn<T>): QTableColumn<T> => {
   const label = definition.header;
 
   if (typeof label !== "string") {
@@ -78,16 +83,14 @@ const withSortingHeader = (definition: TableColumn<T>): TableColumn<T> => {
         }),
       ]);
     },
-  } as TableColumn<T>;
+  } as QTableColumn<T>;
 };
-
-const columns = computed<TableColumn<T>[]>(() => $props.columns.map(withSortingHeader));
 
 const initialLoading = computed(() => $props.pending || ($props.loading && $props.data === undefined));
 
 const refreshing = computed(() => $props.loading && $props.data !== undefined);
 
-const emptyTitle = computed(() => (initialLoading.value ? LOADING_TITLE : $props.empty));
+const columns = computed<QTableColumn<T>[]>(() => $props.columns.map(withSortingHeader));
 
 const meta: TableMeta<T> = {
   get refreshing() {
@@ -99,11 +102,15 @@ const ui = computed(() => ({
   separator: "z-0",
   thead: "after:z-0",
   tbody: refreshing.value ? "opacity-50 pointer-events-none transition-opacity" : "opacity-100 transition-opacity",
+  loading: "p-0 text-start",
 }));
 </script>
 
 <template>
-  <div class="relative flex min-h-0 grow flex-col overflow-hidden">
+  <div
+    class="relative flex min-h-0 grow flex-col overflow-hidden"
+    :aria-busy="initialLoading || refreshing"
+  >
     <div
       v-if="$props.error && !initialLoading && !refreshing"
       class="absolute inset-0 z-10 flex items-center justify-center bg-default/75 p-4"
@@ -124,11 +131,17 @@ const ui = computed(() => ({
       :sorting-options="SORTING_OPTIONS"
       :loading="initialLoading || refreshing"
       :meta="meta"
-      :empty="emptyTitle"
+      :empty="$props.empty"
       :ui="ui"
     >
+      <template #loading>
+        <QTableSkeleton
+          :columns="$props.columns"
+          :rows="$props.skeletonRows"
+        />
+      </template>
       <template #empty>
-        <slot name="empty">{{ emptyTitle }}</slot>
+        <slot name="empty">{{ $props.empty }}</slot>
       </template>
     </UTable>
   </div>
