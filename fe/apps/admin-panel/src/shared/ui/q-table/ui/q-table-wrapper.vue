@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { breakpointsTailwind, useBreakpoints } from "@vueuse/core";
+import { useDisplay } from "@/shared/utils/use-display";
 
 defineOptions({
   name: "q-table-wrapper",
@@ -20,7 +20,7 @@ defineSlots<{
   default?: () => unknown;
 }>();
 
-const isDesktop = useBreakpoints(breakpointsTailwind).greaterOrEqual("lg");
+const { isDesktop } = useDisplay();
 </script>
 
 <template>
