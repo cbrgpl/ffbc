@@ -24,7 +24,7 @@ const { isDesktop } = useDisplay();
 </script>
 
 <template>
-  <div>
+  <div class="flex min-h-0 grow flex-col">
     <UInput
       v-model="search"
       class="mb-2 ml-auto w-full lg:w-auto"
@@ -32,8 +32,6 @@ const { isDesktop } = useDisplay();
       :size="isDesktop ? 'md' : 'xl'"
       :placeholder="$props.searchPlaceholder"
     />
-    <div class="flex flex-col grow">
-      <slot></slot>
-    </div>
+    <slot></slot>
   </div>
 </template>

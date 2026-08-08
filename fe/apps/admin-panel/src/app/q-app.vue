@@ -22,7 +22,7 @@ function useCleanup() {
 
 <template>
   <UApp>
-    <UMain class="app-main">
+    <UMain class="h-dvh overflow-auto">
       <RouterView />
     </UMain>
     <PiniaColadaDevtools />

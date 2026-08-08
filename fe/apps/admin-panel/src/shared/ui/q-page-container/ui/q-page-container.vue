@@ -6,10 +6,11 @@ defineOptions({
 const $props = withDefaults(
   defineProps<{
     title?: string;
-    view?: "fixed" | "unbound";
+    /** `content` fills available height and scrolls its content; `page` lets the app main area scroll. */
+    scroll?: "content" | "page";
   }>(),
   {
-    view: "unbound",
+    scroll: "page",
   },
 );
 
@@ -25,7 +26,7 @@ defineSlots<{
     :class="[
       'py-2 px-3 lg:py-8 lg:px-6',
       {
-        'flex flex-col grow overflow-auto': $props.view === 'fixed',
+        'flex min-h-0 grow flex-col overflow-hidden': $props.scroll === 'content',
       },
     ]"
   >

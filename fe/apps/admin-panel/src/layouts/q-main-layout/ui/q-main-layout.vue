@@ -48,7 +48,7 @@ const sidebarIsOpened = ref(true);
 .main-layout {
   display: flex;
   flex-direction: column;
-  min-height: inherit;
+  height: 100%;
 }
 
 .main-layout__header {
@@ -58,21 +58,20 @@ const sidebarIsOpened = ref(true);
 .main-layout__body {
   display: flex;
   flex: 1;
-  height: calc(100vh - var(--ui-header-height));
   min-height: 0;
 }
 
 :deep(.main-layout__sidebar) {
   flex-shrink: 0;
-  height: calc(100vh - var(--ui-header-height));
+  height: 100%;
 }
 
 .main-layout__main {
-  overflow: auto;
   display: flex;
   flex: 1;
   flex-direction: column;
 
   min-width: 0;
+  min-height: 0;
 }
 </style>

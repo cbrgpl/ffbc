@@ -10,7 +10,7 @@ defineOptions({
 <template>
   <QPageContainer
     title="Input characteristics"
-    view="fixed"
+    scroll="content"
   >
     <QInputCharTable />
   </QPageContainer>

@@ -82,10 +82,7 @@ useTableDepending({
 </script>
 
 <template>
-  <QTableWrapper
-    v-model:search="search"
-    class="flex flex-col grow"
-  >
+  <QTableWrapper v-model:search="search">
     <template #default>
       <QTable
         v-model:sorting="sorting"

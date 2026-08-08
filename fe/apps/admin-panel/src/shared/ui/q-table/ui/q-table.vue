@@ -103,7 +103,7 @@ const ui = computed(() => ({
 </script>
 
 <template>
-  <div class="flex flex-col grow relative">
+  <div class="relative flex min-h-0 grow flex-col overflow-hidden">
     <div
       v-if="$props.error && !initialLoading && !refreshing"
       class="absolute inset-0 z-10 flex items-center justify-center bg-default/75 p-4"
@@ -118,7 +118,7 @@ const ui = computed(() => ({
     </div>
     <UTable
       v-model:sorting="sorting"
-      class="grow"
+      class="min-h-0 grow overflow-auto"
       :columns="columns"
       :data="$props.data ?? []"
       :sorting-options="SORTING_OPTIONS"
