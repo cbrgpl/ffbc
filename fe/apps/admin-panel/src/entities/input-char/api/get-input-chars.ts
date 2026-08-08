@@ -1,4 +1,4 @@
-import { ABORT_ERROR, ApiError, UnexpectedResponseError } from "@ffbc/shared";
+import { ApiError, UnexpectedResponseError } from "@ffbc/shared";
 import { getInputCharacteristics } from "@/shared/api/generated/api";
 import type { PaginationModel } from "@/shared/ui/q-pagination";
 import { dto2InputChar } from "../model/input-char";
@@ -28,8 +28,8 @@ export const getInputChars = async ({ signal, pagination, search }: GetInputChar
 
     throw new UnexpectedResponseError("getInputCharacteristics", res);
   } catch (e) {
-    if (e === ABORT_ERROR) {
-      throw e;
+    if (signal.aborted) {
+      throw signal.reason;
     }
 
     throw new ApiError("getInputCharacteristics", "Unexpected error while fetching input characteristics", { cause: e });

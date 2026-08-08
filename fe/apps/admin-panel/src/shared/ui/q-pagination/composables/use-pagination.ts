@@ -1,26 +1,44 @@
 import { PER_PAGE_OPTIONS } from "../static";
 import type { PaginationModel } from "../model";
-import { computed, inject, provide, ref, toValue, type ComputedRef, type InjectionKey, type MaybeRefOrGetter, type Ref } from "vue";
+import { inject, provide, readonly, ref, toValue, watch, type InjectionKey, type MaybeRefOrGetter, type Ref } from "vue";
 
 type PaginationContext = {
   pagination: Ref<PaginationModel>;
-  total: ComputedRef<number>;
+  total: Readonly<Ref<number, number>>;
 };
 
 const PAGINATION_KEY: InjectionKey<PaginationContext> = Symbol("pagination");
 
-export const usePagination = (total: MaybeRefOrGetter<number>) => {
+export const usePagination = () => {
   const pagination = ref<PaginationModel>({
     page: 1,
     perPage: PER_PAGE_OPTIONS[0],
   });
 
-  provide(PAGINATION_KEY, {
-    pagination,
-    total: computed(() => toValue(total)),
-  });
+  let lastTotal: number = 0;
 
-  return { pagination };
+  const initPagination = (total: MaybeRefOrGetter<number | null>) => {
+    const totalLc = ref(0);
+
+    watch(
+      () => toValue(total),
+      (total) => {
+        totalLc.value = total ?? lastTotal;
+
+        if (typeof total === "number") {
+          lastTotal = total;
+        }
+      },
+      { immediate: true },
+    );
+
+    provide(PAGINATION_KEY, {
+      pagination,
+      total: readonly(totalLc),
+    });
+  };
+
+  return { pagination, initPagination };
 };
 
 export const injectPagination = (): PaginationContext => {

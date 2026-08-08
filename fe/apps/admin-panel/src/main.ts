@@ -3,8 +3,9 @@ import "./app/assets/css/main.css";
 import { createApp, type Plugin } from "vue";
 
 import { createPinia } from "pinia";
-import { PiniaColada } from "@pinia/colada";
+import { PiniaColada, PiniaColadaQueryHooksPlugin } from "@pinia/colada";
 import nuxtUi from "@nuxt/ui/vue-plugin";
+import { ABORT_ERROR } from "@ffbc/shared";
 
 import QApp from "./app/q-app.vue";
 import router from "./app/router";
@@ -37,6 +38,22 @@ app.use(router);
 app.use(nuxtUi);
 
 app.use(PiniaColada as unknown as Plugin, {
+  plugins: [
+    PiniaColadaQueryHooksPlugin({
+      onError(error, entry) {
+        if (error === ABORT_ERROR || (error instanceof DOMException && error.name === "AbortError")) {
+          return;
+        }
+
+        // eslint-disable-next-line no-console
+        console.group(`Query failed`);
+        console.error(entry.keyHash);
+        console.error(error);
+        // eslint-disable-next-line no-console
+        console.groupEnd();
+      },
+    }),
+  ],
   queryOptions: {
     gcTime: 5 * 60 * 1000,
   },
