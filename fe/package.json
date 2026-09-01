@@ -14,6 +14,7 @@
     "*.{css,html,vue}": "stylelint --ignore-path .gitignore"
   },
   "scripts": {
+    "postinstall": "npm run build --workspace packages/shared && npm run prepare:nuxt --workspace apps/marketplace",
     "check:types": "vue-tsc --noEmit --project tsconfig.json",
     "check:eslint": "npx eslint . --fix",
     "check:stylelint": "npx stylelint '**/*{.css,.vue}' --fix",
@@ -41,5 +42,13 @@
     "typescript": "^5.9.3",
     "vite-plugin-vue-devtools": "^8.2.1",
     "vue-tsc": "^3.2.3"
+  },
+  "allowScripts": {
+    "esbuild@0.28.1": true,
+    "esbuild@0.25.12": true,
+    "esbuild@0.27.7": true,
+    "unrs-resolver@1.12.2": true,
+    "vue-demi@0.14.10": true,
+    "msw@2.15.0": true
   }
 }
