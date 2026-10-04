@@ -1,0 +1,4 @@
+interface:
+  display_name: "Refine User Story"
+  short_description: "Draft FFBC business-analysis user stories"
+  default_prompt: "Use $refine-user-story with a target filepath and story name to write or refine a Russian User Story."
