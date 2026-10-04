@@ -315,7 +315,7 @@ duplicating the complete scenario.
 Example:
 
 > Администратор инициирует историю
-> [создание шаблона](<Входные характеристики#Создание\редактирование шаблона входных характеристик>).
+> [создание шаблона](<Input Characteristics#Создание\редактирование шаблона входных характеристик>).
 
 After the referenced User Story finishes, explicitly describe what happens in
 the current scenario.
